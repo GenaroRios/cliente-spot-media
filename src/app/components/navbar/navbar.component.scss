@@ -1,0 +1,47 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1000;
+  
+    
+  
+    .nav-links {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      gap: 2rem;
+  
+      li a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Akzidenz-Grotesk BQ';
+        font-style: 'regular';
+        font-display: swap;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: #7AE3E1;
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    .highlight {
+      color: #7AE3E1;
+    }
+  }

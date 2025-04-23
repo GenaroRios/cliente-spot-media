@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+@import '../src/assets/fonts/AkzidenzGroteskBQ-Ext/stylesheet.css';
+@import '../src/assets/fonts/AkzidenzGroteskBQ-BoldExt/stylesheet.css';
+@import '../src/assets/fonts/MyriadPro-Regular/stylesheet.css';

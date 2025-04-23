@@ -1,0 +1,54 @@
+#load-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:  rgba(0, 0, 0, 0.9); /* o el color/fondo que quieras */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.playa-section{
+  /*background-image: url("https://res.cloudinary.com/diixwwqeu/image/upload/v1745324234/fondo_home_tn9wt9.avif");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  */
+
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-content{
+  opacity: 0;
+}
+
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+button{
+  font-family: 'Akzidenz-Grotesk BQ';
+  min-width: 15rem; // o el valor que consideres
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
