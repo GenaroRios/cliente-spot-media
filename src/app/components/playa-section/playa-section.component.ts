@@ -24,8 +24,6 @@ export class PlayaSectionComponent {
   {
     if (isPlatformBrowser(this.platformId))
     {
-      window.addEventListener('load', () => {
-
         setTimeout(() => {
           const loadScreen = document.getElementById('load-screen') as HTMLAnchorElement;
           const homeContent = document.getElementById('home-content') as HTMLAnchorElement;
@@ -39,7 +37,6 @@ export class PlayaSectionComponent {
             homeContent.style.transition ='opacity 1s ease';
           }, 1000); // Espera a que la transición de opacidad termine
         }, 3000); // 3 segundos de pantalla de carga
-      });
     }
     
   }

@@ -1,11 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { PlayaSectionComponent } from "../playa-section/playa-section.component";
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   imports: [
-    PlayaSectionComponent, 
+    RouterOutlet, 
     CommonModule
   ],
   templateUrl: './home.component.html',

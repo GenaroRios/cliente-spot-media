@@ -1,0 +1,12 @@
+.overlay{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:  rgba(0, 0, 0, 0.7); /* o el color/fondo que quieras */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
