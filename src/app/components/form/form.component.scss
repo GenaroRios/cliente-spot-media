@@ -1,40 +1,43 @@
 .form-container {
     display: flex;
-    z-index: 2000;
     justify-content: center;
     align-items: center;
     font-family: 'Akzidenz-Grotesk BQ';
-    margin-top: 2rem;
+    width: 100%;
+    height: 100%;
+    margin-top: 10rem;
   }
   
   .form-card {
     position: relative;
     background: white;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 3rem 3rem;
     width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
+    max-width: 20rem;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   }
   
   .form-title {
     font-size: 1.8rem;
     text-align: center;
-    color: #00c9ff;
-    margin: 0;
+    color: #00a2ff;
+    margin-bottom: 1.5rem;
   }
   
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.2rem;
   }
   
   input {
     border: none;
+    width: 100%;
     border-bottom: 2px solid #90f7ec;
-    padding: 8px 0;
+    padding: 0.5rem 0;
     outline: none;
+    font-family: 'Akzidenz-Grotesk BQ';
     font-size: 1rem;
     transition: border-color 0.3s;
   }
@@ -42,14 +45,35 @@
   input:focus {
     border-color: #00c9ff;
   }
+
+  textarea.auto-expand {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    height: 1.5rem; /* altura inicial como una línea */
+    max-height: 4.5rem; /* hasta 3 líneas */
+    line-height: 1.5rem;
+    border: none;
+    border-bottom: 2px solid #90f7ec;
+    padding: 8px 0;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+  }
+  
+  textarea.auto-expand:focus {
+    border-color: #00c9ff;
+  }
+  
   
   .submit-button {
-    margin-top: 1.5rem;
-    padding: 10px;
+    width: 15rem;
+    padding: 1rem 1rem;
     background: linear-gradient(to right, #00c9ff, #92fe9d);
     border: none;
-    color: white;
-    font-weight: bold;
+    color: black;
+    font-family: 'Akzidenz-Grotesk BQ';
     letter-spacing: 1px;
     cursor: pointer;
     transition: background 0.3s;

@@ -10,13 +10,4 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 })
 export class AppComponent {
   
-  isHomePage: boolean = false;
-
-  constructor(private router: Router) {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.isHomePage = this.router.url === ''; // o '/home' según tu ruta
-      }
-    });
-  }
 }

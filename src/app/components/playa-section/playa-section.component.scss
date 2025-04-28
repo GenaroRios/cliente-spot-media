@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color:  rgba(0, 0, 0, 0.9); /* o el color/fondo que quieras */
+  background-color:  rgba(0, 0, 0, 0.8); /* o el color/fondo que quieras */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,12 +12,6 @@
 }
 
 .playa-section{
-  /*background-image: url("https://res.cloudinary.com/diixwwqeu/image/upload/v1745324234/fondo_home_tn9wt9.avif");
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  */
 
   height: 100vh;
   width: 100vw;
@@ -30,12 +24,22 @@
 
 #home-content{
   opacity: 0;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .banner{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+  img{
+    width: 60vw;
+  }
 }
 
 
@@ -43,12 +47,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  width: 60vw;
+  gap: 3rem;
 }
 
 button{
   font-family: 'Akzidenz-Grotesk BQ';
-  min-width: 15rem; // o el valor que consideres
+  font-size: 1rem;
+  color: rgb(0, 174, 255) !important;
+  box-shadow: 0.25rem 0.25rem 0.7rem rgba(0, 0, 0, 0.3);
+  width: 15rem; // o el valor que consideres
+  height: 2.5rem;
+  border-radius: 0.7rem;
   padding: 0.5rem 1rem;
   text-align: center;
 }

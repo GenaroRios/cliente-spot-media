@@ -1,0 +1,22 @@
+.overlay{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)); /* o el color/fondo que quieras */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contenido {
+    color: white;
+    max-width: 600px;
+    margin-left: 5rem;
+    line-height: 1.6;
+    font-family: 'Akzidenz-Grotesk BQ';
+    font-size: 1.1rem;
+  }
+  
+  strong {
+    font-family: 'Akzidenz-Grotesk BQ-Bold';
+  }

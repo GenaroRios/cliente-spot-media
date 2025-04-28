@@ -36,7 +36,7 @@ export class PlayaSectionComponent {
             homeContent.style.opacity = '1';
             homeContent.style.transition ='opacity 1s ease';
           }, 1000); // Espera a que la transición de opacidad termine
-        }, 3000); // 3 segundos de pantalla de carga
+        }, 1500); // 3 segundos de pantalla de carga
     }
     
   }
