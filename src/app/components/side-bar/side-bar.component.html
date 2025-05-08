@@ -1,0 +1,24 @@
+<!--<aside id="sidebar">
+    <a routerLink="playas-del-sur">
+      <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1746013179/bt_playas_del_sur_-_Editado_mkie4o.png" alt="Playas del Sur">
+    </a>
+    <a routerLink="playa-grande">
+      <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1746013179/bt_playa_grande_-_Editado_kstfu3.png" alt="Playa Grande">
+    </a>
+    <a routerLink="playa-varese">
+      <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1746013179/bt_varese_-_Editado_xzperl.png" alt="Playa Varese">
+    </a>
+    <a routerLink="playas-la-perla">
+      <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1746013179/bt_perla_-_Editado_ykganx.png" alt="Playas La Perla">
+    </a>
+  </aside>-->
+
+  <aside class="side-nav">
+    <ng-container *ngFor="let playa of locations">
+      <button class="nav-item"   
+      routerLink="/servicios/{{playa.id}}"
+      [innerHTML]="setTitulo(playa.name)"></button>
+    </ng-container>
+  </aside>
+  
+  

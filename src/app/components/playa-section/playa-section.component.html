@@ -11,7 +11,7 @@
       <img src="https://res.cloudinary.com/diixwwqeu/image/upload/f_auto/q_auto/v1745252450/publicita_en_playas_nmmira.png" alt="Publicita en playas">
     </div>
     <div class="buttons">
-      <button mat-raised-button *ngFor="let playa of playas" class="boton">{{ playa }}</button>
+      <button mat-raised-button *ngFor="let playa of locations" class="boton" routerLink="/servicios/{{playa.id}}">{{ playa.name }}</button>
     </div>
   </div>
 </section>

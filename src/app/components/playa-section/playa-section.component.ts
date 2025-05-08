@@ -1,24 +1,28 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { simpleLocation } from './../../models/simpleLocation.model';
+import { ApiServiceService } from './../../services/api-service.service';
+import { CommonModule, isPlatformBrowser} from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
+import { error } from 'console';
 
 @Component({
   selector: 'app-playa-section',
   standalone: true,
-  imports:[
-
+  imports: [
     CommonModule,
-    MatButtonModule
-
-  ],
+    MatButtonModule,
+    RouterModule
+],
   templateUrl: './playa-section.component.html',
   styleUrls: ['./playa-section.component.scss']
 })
 export class PlayaSectionComponent {
-  playas = ['LA PERLA', 'VARESE', 'PLAYA GRANDE', 'PLAYAS DEL SUR'];
+  playas = [{name:'LA PERLA', link: 'playas-la-perla'}, {name:'VARESE', link:'playa-varese'}, {name: 'PLAYA GRANDE', link:'playa-grande'}, {name:'PLAYAS DEL SUR', link: 'playas-del-sur'}];
 
+  locations: simpleLocation[] = [];
   //Platform id sirve para identificar la plataforma en la que se esta ejecutando el programa
-  constructor(@Inject(PLATFORM_ID) private platformId: Object){}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private api: ApiServiceService){}
 
   ngOnInit()
   {
@@ -35,6 +39,15 @@ export class PlayaSectionComponent {
             loadScreen.style.display = 'none';
             homeContent.style.opacity = '1';
             homeContent.style.transition ='opacity 1s ease';
+
+            this.api.getLocations().subscribe({
+              next: (locations) => {
+                this.locations = locations;
+              },
+              error: (error) => {
+                console.error('Error:', error);
+              }
+            });
           }, 1000); // Espera a que la transición de opacidad termine
         }, 1500); // 3 segundos de pantalla de carga
     }

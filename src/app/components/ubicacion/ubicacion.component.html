@@ -1,0 +1,24 @@
+<section class="content">
+    <h1 class="titulo-ubicacion" [innerHTML]="titulo"></h1>
+    <button class="subtitulo">CIRCUITOS Y DISPOSITIVOS</button>
+
+    <div class="miniaturas" *ngIf="servicios && servicios.length != 0; else noContent">
+        <ng-container *ngFor="let servicio of servicios">
+            <div *ngIf="servicio.thumbnail != ''">
+                <app-miniatura-servicio
+                [name]="servicio.shortTitle"
+                [thumbnail]="servicio.thumbnail"></app-miniatura-servicio>
+            </div>
+        </ng-container>
+    </div>
+
+    <ng-template #noContent>
+        <h2 class="noContent">PROXIMAMENTE</h2>
+    </ng-template>
+</section>
+<ng-container *ngIf="servicios && servicios.length != 0"> 
+    <app-servicio-content *ngFor="let servicio of servicios"
+        [image]="servicio.image"
+        [title]="servicio.title"
+        [description]="servicio.description"></app-servicio-content>
+</ng-container>
