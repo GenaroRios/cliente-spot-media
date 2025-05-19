@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Inject, Input, PLATFORM_ID, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -13,23 +14,31 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
-  @Input() home: boolean = false;
+  constructor(
+    private el: ElementRef<HTMLElement>,
+    private renderer: Renderer2,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe((event: any) => {
+      if(event.url === '/')
+      {
+        this.fade();
+      }
+    });
+  }
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
-  ngOnChanges(changes: SimpleChanges): void {
+  private fade(){
     
-    if (changes['home'].currentValue && isPlatformBrowser(this.platformId)) {
-      if (this.home)
-        {
-          const nav = document.getElementById("navbar") as HTMLAnchorElement;
-          nav.style.transition = 'none';
-          nav.style.opacity = '0';
-          setTimeout(()=>{
-            nav.style.transition = 'opacity 1s ease';
-            nav.style.opacity = '1';
-          }, 2500);
-        }
+    if (isPlatformBrowser(this.platformId)) {
+      const nav = document.getElementById("navbar") as HTMLAnchorElement;
+      nav.classList.add('fade-out');
+      nav.style.animationDelay = '0s'
+      setTimeout(()=>{
+        void nav.offsetWidth;
+        nav.classList.remove('fade-out');
+      }, 2500);
     }
   }
 

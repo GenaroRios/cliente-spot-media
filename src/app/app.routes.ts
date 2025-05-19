@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { PlayaSectionComponent } from './components/playa-section/playa-section.component';
 import { NosotrosPageComponent } from './components/nosotros-page/nosotros-page.component';
@@ -9,7 +8,7 @@ import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
 
-    {
+    /*{
         path: '',
         component: HomeComponent,
         children:[
@@ -31,6 +30,18 @@ export const routes: Routes = [
                 pathMatch: 'full'
             }
         ]
+    },*/
+    {
+        path: '',
+        component: PlayaSectionComponent
+    },
+    {
+        path: 'nosotros',
+        component: NosotrosPageComponent
+    },
+    {
+        path: 'contacto',
+        component: ContactPageComponent
     },
     {
         path: 'servicios',
@@ -49,6 +60,6 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        component: HomeComponent
+        component: PlayaSectionComponent
     }
 ];

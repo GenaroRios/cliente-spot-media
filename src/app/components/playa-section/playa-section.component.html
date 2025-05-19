@@ -1,18 +1,18 @@
-
-
-<section class="playa-section">
-  <div id="load-screen">
-    <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1745322410/logo_hero_zdf9ad.png"
-    alt="Logo"
-   class="logo"/>
-  </div>
-  <div id="home-content">
-    <div class="banner">
-      <img src="https://res.cloudinary.com/diixwwqeu/image/upload/f_auto/q_auto/v1745252450/publicita_en_playas_nmmira.png" alt="Publicita en playas">
+<div class="fondo">
+  <section class="playa-section">
+    <div id="load-screen">
+      <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1745322410/logo_hero_zdf9ad.png"
+      alt="Logo"
+    class="logo"/>
     </div>
-    <div class="buttons">
-      <button mat-raised-button *ngFor="let playa of locations" class="boton" routerLink="/servicios/{{playa.id}}">{{ playa.name }}</button>
+    <div id="home-content">
+      <div class="banner">
+        <img src="https://res.cloudinary.com/diixwwqeu/image/upload/f_auto/q_auto/v1745252450/publicita_en_playas_nmmira.png" alt="Publicita en playas">
+      </div>
+      <div class="buttons">
+        <button mat-raised-button *ngFor="let playa of locations" class="boton" routerLink="/servicios/{{playa.id}}">{{ playa.name }}</button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
   
