@@ -5,6 +5,7 @@ import { PlayaSectionComponent } from './components/playa-section/playa-section.
 import { NosotrosPageComponent } from './components/nosotros-page/nosotros-page.component';
 import { ServicioPageComponent } from './components/servicio-page/servicio-page.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
 
@@ -13,16 +14,16 @@ export const routes: Routes = [
         component: HomeComponent,
         children:[
             {
-                path: 'contacto',
-                component: ContactPageComponent
-            },
-            {
                 path: 'home',
                 component: PlayaSectionComponent
             },
             {
                 path:'nosotros',
                 component: NosotrosPageComponent
+            },
+            {
+                path: 'contacto',
+                component: ContactPageComponent
             },
             {
                 path:'',
@@ -44,28 +45,6 @@ export const routes: Routes = [
                 redirectTo: '1',
                 pathMatch: 'full'
             }
-
-            /*{
-                path: 'playa-grande',
-                component: PlayaGrandeComponent
-            },
-            {
-                path: 'playa-varese',
-                component: PlayaVareseComponent
-            },
-            {
-                path: 'playas-del-sur',
-                component: PlayasSurComponent
-            },
-            {
-                path: 'playas-la-perla',
-                component: PlayaPerlaComponent
-            },
-            {
-                path: '',
-                redirectTo: 'playa-grande',
-                pathMatch: 'full'
-            }*/
         ]
     },
     {

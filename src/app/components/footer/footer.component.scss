@@ -27,11 +27,20 @@
     gap: 0.6rem;
 }
 
-.social-icons a {
-    margin: 0 0.10rem;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
+.social-icons{
+
+    display: flex;
+    flex-direction: row;
+    
+
+    a img {
+        
+        margin-right: 0.2rem;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+    }
+
+} 
 
 .handle {
     display: flex;

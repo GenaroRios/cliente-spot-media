@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build:ssr": "ng build --configuration production && ng run spot-media:server:production",
     "serve:ssr:spot-media": "node dist/spot-media/server/server.mjs"
   },
   "private": true,
@@ -22,6 +23,7 @@
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.1",
+    "@nguniversal/express-engine": "^7.0.2",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
