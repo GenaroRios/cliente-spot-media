@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:ssr": "ng build --configuration production && ng run spot-media:server:production",
+    "build:ssr": "ng build --configuration=production && ng run spot-media:server:production",
     "serve:ssr:spot-media": "node dist/spot-media/server/server.mjs"
   },
   "private": true,

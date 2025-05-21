@@ -2,16 +2,17 @@ import { Servicio } from './../models/servicio.model';
 import { Location } from '../models/location.model';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { request } from 'http';
 import { Observable } from 'rxjs';
 import { simpleLocation } from '../models/simpleLocation.model';
+import { environment } from '../../environments/enviroment';
+import { ContactRequest } from '../models/contactRequest.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
-  private readonly API_URL = 'http://localhost:3000';
+  private readonly API_URL = 'https://spotmediainc.com';
 
   constructor(private http: HttpClient) { }
 
@@ -72,6 +73,10 @@ export class ApiServiceService {
 
   getLocationById(id: number): Observable<Location>{
     return this.get('locations/' + id);
+  }
+
+  sendContact(data: ContactRequest): Observable<void>{
+    return this.post('/api/contact', data);
   }
 
 

@@ -4,33 +4,9 @@ import { PlayaSectionComponent } from './components/playa-section/playa-section.
 import { NosotrosPageComponent } from './components/nosotros-page/nosotros-page.component';
 import { ServicioPageComponent } from './components/servicio-page/servicio-page.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
-import { RenderMode } from '@angular/ssr';
+
 
 export const routes: Routes = [
-
-    /*{
-        path: '',
-        component: HomeComponent,
-        children:[
-            {
-                path: 'home',
-                component: PlayaSectionComponent
-            },
-            {
-                path:'nosotros',
-                component: NosotrosPageComponent
-            },
-            {
-                path: 'contacto',
-                component: ContactPageComponent
-            },
-            {
-                path:'',
-                redirectTo: 'home',
-                pathMatch: 'full'
-            }
-        ]
-    },*/
     {
         path: '',
         component: PlayaSectionComponent

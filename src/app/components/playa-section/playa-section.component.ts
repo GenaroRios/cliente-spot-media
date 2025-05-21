@@ -4,7 +4,6 @@ import { CommonModule, isPlatformBrowser} from '@angular/common';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { error } from 'console';
 
 @Component({
   selector: 'app-playa-section',
@@ -26,6 +25,14 @@ export class PlayaSectionComponent {
 
   ngOnInit()
   {
+    this.api.getLocations().subscribe({
+      next: (locations) => {
+        this.locations = locations;
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      }
+    });
     if (isPlatformBrowser(this.platformId))
     {
         setTimeout(() => {
@@ -39,15 +46,6 @@ export class PlayaSectionComponent {
             loadScreen.style.display = 'none';
             homeContent.style.opacity = '1';
             homeContent.style.transition ='opacity 1s ease';
-
-            this.api.getLocations().subscribe({
-              next: (locations) => {
-                this.locations = locations;
-              },
-              error: (error) => {
-                console.error('Error:', error);
-              }
-            });
           }, 1000); // Espera a que la transición de opacidad termine
         }, 1500); // 3 segundos de pantalla de carga
     }

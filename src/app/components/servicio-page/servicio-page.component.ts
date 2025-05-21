@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ServicioContentComponent } from "../servicio-content/servicio-content.component";
 import { SideBarComponent } from "../side-bar/side-bar.component";
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-servicio-page',
@@ -13,5 +15,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './servicio-page.component.scss'
 })
 export class ServicioPageComponent {
+
 
 }
