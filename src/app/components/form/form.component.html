@@ -1,15 +1,16 @@
 <div class="form-container">
     <div class="form-card">
       <h2 class="form-title">¡Escribinos!</h2>
-      <form>
-        <input type="text" placeholder="Nombre" required/>
-        <input type="email" placeholder="Email" required/>
-        <input type="tel" placeholder="Celular" required/>
-        <input type="text" placeholder="Servicio a presupuestar" required/>
-        <textarea class="auto-expand" placeholder="Mensaje"></textarea>
+      <form [formGroup]="contactRequest" (ngSubmit)="onSubmit()">
+        <input formControlName="nombre" type="text" placeholder="Nombre" required/>
+        <input formControlName="email" type="email" placeholder="Email" required/>
+        <input formControlName="celular" type="tel" placeholder="Celular" required/>
+        <input formControlName="servicio" type="text" placeholder="Servicio a presupuestar" required/>
+        <textarea formControlName="mensaje" class="auto-expand" placeholder="Mensaje"></textarea>
         <button type="submit" class="submit-button">ENVIAR</button>
       </form>
-      
+      <p *ngIf="success">¡Mensaje enviado!</p>
+      <p *ngIf="error">{{errorMessage}}</p>
     </div>
 </div>
   

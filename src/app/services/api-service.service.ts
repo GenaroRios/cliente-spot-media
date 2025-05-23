@@ -12,7 +12,8 @@ import { ContactRequest } from '../models/contactRequest.model';
 })
 export class ApiServiceService {
 
-  private readonly API_URL = 'https://spotmediainc.com';
+  //private readonly API_URL = 'https://spotmediainc.com';
+  private readonly API_URL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -76,7 +77,7 @@ export class ApiServiceService {
   }
 
   sendContact(data: ContactRequest): Observable<void>{
-    return this.post('/api/contact', data);
+    return this.post('api/contact', data);
   }
 
 
