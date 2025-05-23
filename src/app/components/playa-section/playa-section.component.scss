@@ -1,14 +1,32 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 #load-screen {
+  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
+  background-color:  rgba(0, 0, 0, 0.8); /* o el color/fondo que quieras */
   width: 100vw;
   height: 100vh;
-  background-color:  rgba(0, 0, 0, 0.8); /* o el color/fondo que quieras */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
+
+  img{
+    width: 80vw;
+    height: auto;
+
+    @include respond-to(sm){
+      height: auto;
+    }
+
+    @include respond-to(desktop){
+      width: auto;
+      height: auto;
+    }
+  }
 }
 
 .playa-section{
@@ -23,12 +41,28 @@
 }
 
 #home-content{
-  opacity: 0;
-  height: 50vh;
+  opacity: 1;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content:center;
+  gap: 1rem;
+
+  // sm: altura moderada
+  @include respond-to(sm) {
+    height: 40vh;
+  }
+  // tablet: más altura
+  @include respond-to(tablet) {
+    height: 45vh;
+  }
+
+  @include respond-to(desktop)
+  {
+    height: 50vh;
+    justify-content: space-around;
+  }
 }
 
 .banner{
@@ -38,27 +72,66 @@
   justify-content: center;
   
   img{
-    width: 60vw;
+    width: 90vw;
+
+    @include respond-to(sm) {
+      width: 70vw;
+    }
+    @include respond-to(tablet) {
+      width: 70vw;
+    }
+    // en desktop ya tenías 60vw, lo mantenemos:
+    @include respond-to(desktop) {
+      width: 60vw;
+    }
   }
 }
 
 
 .buttons{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60vw;
-  gap: 3rem;
+  gap: 1.5rem;
+  
+  @include respond-to(lg){
+    flex-direction: row;
+    width: 90vw;
+    gap: 3rem;
+  }
+
+  @include respond-to(desktop){
+    flex-direction: row;
+    width: 70vw;
+    gap: 3rem;
+  }
 }
 
 button{
   font-family: 'Akzidenz-Grotesk BQ';
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: rgb(0, 174, 255) !important;
   box-shadow: 0.25rem 0.25rem 0.7rem rgba(0, 0, 0, 0.3);
-  width: 15rem; // o el valor que consideres
+  width: 50vw; // o el valor que consideres
   height: 2.5rem;
   border-radius: 0.7rem;
   padding: 0.5rem 1rem;
+  
   text-align: center;
+
+  @include respond-to(sm){
+    width: 50vw;
+    font-size: 1rem;
+  }
+
+  @include respond-to (lg){
+    width: 15rem; // o el valor que consideres
+    height: 2.5rem;
+  }
+
+  @include respond-to(desktop){
+    width: 15rem; // o el valor que consideres
+    height: 2.5rem;
+  }
 }

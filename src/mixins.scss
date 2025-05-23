@@ -1,0 +1,17 @@
+// _mixins.scss
+@use 'sass:map';
+@use 'variables' as *;
+
+/// Media-query helper: usa un breakpoint definido en $breakpoints
+/// @param $point [String] Llave del breakpoint en $breakpoints
+@mixin respond-to($point) {
+  $size: map.get($breakpoints, $point);
+
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$point}` no existe en $breakpoints.";
+  }
+}

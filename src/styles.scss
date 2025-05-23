@@ -1,4 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@import '../src/assets/fonts/AkzidenzGroteskBQ-Ext/stylesheet.css';
+@import '../src/assets/fonts/AkzidenzGroteskBQ-BoldExt/stylesheet.css';
+@import '../src/assets/fonts/MyriadPro-Regular/stylesheet.css';
+
 html,body {
     margin: 0;
     padding: 0;
@@ -8,14 +14,32 @@ html,body {
 }
 
 .fondo{
+  // base (móvil): 
+  // - no fijamos dimensiones para que se adapte al alto de contenido
+  // - background-size automático, para no recortar en pantallas muy pequeñas
   background-image: url("https://res.cloudinary.com/diixwwqeu/image/upload/v1745324234/fondo_home_tn9wt9.avif");
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  // sm (≥576px): ajustamos un poco la cobertura
+  @include respond-to(sm) {
+    background-size: cover;
+  }
+
+  // tablet (≥768px): ya cubrimos todo el contenedor
+  @include respond-to(tablet) {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  // desktop (≥1200px): aseguramos 100% viewport
+  @include respond-to(desktop) {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
-@import '../src/assets/fonts/AkzidenzGroteskBQ-Ext/stylesheet.css';
-@import '../src/assets/fonts/AkzidenzGroteskBQ-BoldExt/stylesheet.css';
-@import '../src/assets/fonts/MyriadPro-Regular/stylesheet.css';
+

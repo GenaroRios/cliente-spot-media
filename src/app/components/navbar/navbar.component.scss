@@ -1,3 +1,6 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 @keyframes fadeInNav {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -8,46 +11,31 @@
   to {opacity: 0;}
 }
 
+
 #navbar {
-    opacity: 0;
-  /* Al añadir la clase, corre el keyframe */
-    animation: fadeInNav 1s ease-out forwards;
-    animation-delay: 2.5s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  opacity: 0;
+  animation: fadeInNav 1s ease-out forwards;
+  animation-delay: 2.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.75rem 1rem;    // móvil: padding reducido
+  z-index: 1000;
+
+  // tablet en adelante: más padding
+  @include respond-to(tablet) {
+    padding: 0.9rem 2rem;
+  }
+  // desktop: tu padding original
+  @include respond-to(desktop) {
     padding: 1rem 5rem;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    position: fixed;
     width: 100vw;
-    top: 0;
-    z-index: 1000;
-  
-  
-    .nav-links {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr;
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      gap: 2rem;
-  
-      li a {
-        color: white;
-        text-decoration: none;
-        font-family: 'Akzidenz-Grotesk BQ';
-        font-style: 'regular';
-        font-display: swap;
-        transition: color 0.3s ease;
-  
-        &:hover {
-          color: rgb(0, 174, 255);
-        }
-      }
-    }
   }
 
   .logo {
@@ -57,7 +45,83 @@
     .highlight {
       color: #7AE3E1;
     }
+
+    img{
+      width: 50vw;
+      height: 1.2rem;
+
+      @include respond-to(sm){
+        width: 16rem;
+        height: 1.4;
+      }
+
+      @include respond-to(tablet){
+        width: 18rem;
+        height: 1.6rem;
+      }
+
+      @include respond-to(lg){
+        width: 20rem;
+        height: 1.8rem;
+      }
+
+      @include respond-to(desktop){
+        width: 25rem;
+        height: 2rem;
+      }
+    }
   }
+
+  .nav-links {
+    list-style: none;
+    display: flex;           // móvil: links en fila adaptable
+    flex-direction: column;  // uno debajo de otro
+    gap: 0.75rem;            // espacio reducido
+
+    // sm/tablet: pasamos a fila horizontal
+    @include respond-to(sm) {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+    // lg en adelante: iguales tus gaps de desktop
+    @include respond-to(lg) {
+      gap: 2rem;
+    }
+    // desktop: mantenemos 3 columnas fijas si lo prefieres
+    @include respond-to(desktop) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Akzidenz-Grotesk BQ';
+      font-style: regular;
+      font-display: swap;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: rgb(0, 174, 255);
+      }
+      font-size: 0.5rem;
+
+      @include respond-to(sm)
+      {
+        font-size: 0.8rem;
+      }
+
+      @include respond-to(tablet){
+        font-size:1rem;
+      }
+
+      @include respond-to(desktop){
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
 
   #navbar.fade-out{
     animation: fade-out 0s ease-out forwards;
