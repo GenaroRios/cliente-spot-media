@@ -1,3 +1,6 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 .content{
     display: flex;
     flex-direction: column;
@@ -6,6 +9,10 @@
     height: 100vh; /* o una altura proporcional si no querés pantalla completa */
     background-color: #111;
     text-align: center;
+
+    @include respond-to(desktop){
+        
+    }
 }
 
 .titulo-ubicacion{
@@ -14,6 +21,22 @@
     margin: 0;
     line-height: 0.9;
     color: white;
+
+    @include respond-to(tablet){
+        font-size: 6rem;
+    }
+
+    @include respond-to(lg){
+        font-size: 7rem;
+    }
+
+    @include respond-to(desktop){
+        font-size: 5rem;
+    }
+
+    @include respond-to(xl){
+        font-size: 10rem;
+    }
 }
 
 .subtitulo {
@@ -25,6 +48,18 @@
     border: none;
     border-radius: 1rem;
     font-family: 'Akzidenz-Grotesk BQ';
+
+    @include respond-to(tablet){
+        font-size: 1.4rem;
+    }
+
+    @include respond-to(lg){
+        font-size: 1.3rem;
+    }
+
+    @include respond-to(xl){
+        font-size: 2rem;
+    }
 }
 
 .noContent{
