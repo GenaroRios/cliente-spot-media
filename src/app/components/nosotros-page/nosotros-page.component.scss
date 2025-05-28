@@ -1,20 +1,62 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 .overlay{
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)); /* o el color/fondo que quieras */
+    background-color:  rgba(0, 0, 0, 0.8); /* o el color/fondo que quieras */
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    text-align: justify;
+
+    @include respond-to (tablet){
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+      justify-content: flex-start;
+      text-align: left;
+    }
 }
 
 .contenido {
     color: white;
-    max-width: 600px;
-    margin-left: 5rem;
+    width: 90vw;
     line-height: 1.6;
     font-family: 'Akzidenz-Grotesk BQ';
     font-size: 1.1rem;
+
+    @include respond-to(sm){
+      margin-left: 4rem;
+      line-height: 1.4;
+      font-size: 1.1rem;
+      max-width: 60%;
+    }
+
+    @include respond-to(tablet){
+      margin-left: 4rem;
+      line-height: 1.4;
+      font-size: 1.1rem;
+      max-width: 60%;
+    }
+    
+    @include respond-to(lg){
+      margin-left: 4rem;
+      line-height: 1.4;
+      font-size: 1.1rem;
+      max-width: 40%;
+    }
+
+    @include respond-to(desktop){
+      margin-left: 5rem;
+      line-height: 1.6;
+      max-width: 40%;
+    }
+
+    @include respond-to(xl){
+      margin-left: 5rem;
+      line-height: 1.6;
+      max-width: 30%;
+    }
   }
   
   strong {

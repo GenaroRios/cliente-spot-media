@@ -2,7 +2,7 @@
 @use '../../../mixins.scss' as *;
 
 #load-screen {
-  opacity: 0;
+  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,6 +23,11 @@
     }
 
     @include respond-to(desktop){
+      width: 50vw;
+      height: 70vh;
+    }
+
+    @include respond-to(xl){
       width: auto;
       height: auto;
     }
@@ -41,7 +46,7 @@
 }
 
 #home-content{
-  opacity: 1;
+  opacity: 0;
   
   display: flex;
   flex-direction: column;
@@ -102,8 +107,11 @@
   }
 
   @include respond-to(desktop){
-    flex-direction: row;
-    width: 70vw;
+    width: 100vw;
+    gap: 1.5rem;
+  }
+
+  @include respond-to(xl){
     gap: 3rem;
   }
 }
@@ -131,7 +139,12 @@ button{
   }
 
   @include respond-to(desktop){
-    width: 15rem; // o el valor que consideres
+    width: 13rem;
+  }
+
+  @include respond-to(xl){
+    width: 17rem; // o el valor que consideres
     height: 2.5rem;
+    font-size: 1.2rem;
   }
 }

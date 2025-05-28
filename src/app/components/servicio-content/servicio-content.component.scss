@@ -3,10 +3,9 @@
 
 .background {
     position: relative;
-    width: 1920px;
-    height: 1080px; /* Ajustalo según necesites */
     overflow: hidden;
-
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Contenido a la derecha */
@@ -14,11 +13,19 @@
     color: white;
 
     @include respond-to(desktop){
-      background-size: contain;
+      max-width: 1400px;
+      height: 100vh;
     }
 
     @include respond-to(xl){
+      max-width: 100vw;
+      width: 100vw;
+      height: 100vh;
+    }
 
+    @media screen and (min-width: 1920px) {
+      width: 100vw;
+      height: 100vh;
     }
   }
 
@@ -53,29 +60,59 @@
       font-size: 4rem;
       color: #c49ddc;
     }
-  }
 
-  .long-title{
-    font-family: 'Akzidenz-Grotesk BQ-Bold';
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    text-align: right;
+    @include respond-to(desktop){
+      font-size: 5rem;
+      margin-bottom: 0.5rem;
+      line-height: 3rem;
+
+      ::ng-deep .secondary {
+      font-size: 3rem;
+      }
+    }
+
+    @include respond-to(xl){
+      font-size: 6rem;
+      margin-bottom: 1rem;
+      line-height: 4rem;
+
+      ::ng-deep .secondary {
+      font-size: 4rem;
+      }
+    }
   }
   
   .description {
     align-self: flex-end;
     max-width: 70%;
     font-family: 'Akzidenz-Grotesk BQ';
-    font-size: 1.3rem;
+    
     line-height: 1.5;
+
+    @include respond-to(desktop){
+      font-size: 1rem;
+    }
+
+    @include respond-to(xl){
+      font-size: 1.3rem;
+    }
   }
 
   img{
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit:cover;
     z-index: 1;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+
+    @include respond-to(xl){
+      object-fit: cover;
+    }
+
+    @media screen and (min-width: 1920px) {
+      object-fit: cover;
+    }
+    
   }
