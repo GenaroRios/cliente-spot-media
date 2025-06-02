@@ -1,59 +1,22 @@
-# SpotMedia
+# Spot Media Inc. Web Client
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+A modern, Angular-based web client for Spot Media Inc., designed to showcase available services and interactive content.  
+**Currently under active development**: implementing mobile-first responsive breakpoints for seamless use on phones, tablets, and desktops.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Clean, component-driven UI**  
+  Built with Angular and SCSS following best practices for modularity and maintainability.  
+- **Dynamic data loading**  
+  Consumes the Spot Media REST API to display locations, services, and media assets in real time.  
+- **Loading screens & animations**  
+  Smooth fade-in navigation, content placeholders, and transition effects during API calls.  
+- **Mobile-first responsive design**  
+  All layouts and components are being adapted to ensure optimal viewing on any screen size.
 
-```bash
-ng serve
-```
+## Live Demo
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🔗 [https://spotmediainc.com](https://spotmediainc.com)
 
-## Code scaffolding
+> _Note: Responsive styles and breakpoints are a work in progress._  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
