@@ -1,6 +1,6 @@
 <section class="background">
     <div class="overlay"></div>
-    <img [src]="image" [alt]="title">
+    <img [src]="image" [alt]="title" loading="lazy">
     <div class="content">
         <h2 class="title" [innerHTML]="resaltarTitulo(title)"></h2>
         <p [innerHTML]="description" class="description"></p>
