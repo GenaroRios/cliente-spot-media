@@ -72,8 +72,10 @@ export class ApiServiceService {
     return this.get('locations');
   }
 
-  getLocationById(id: number): Observable<Location>{
-    return this.get('locations/' + id);
+  getLocationById(id: number, isMobile: boolean): Observable<Location>{
+    let params = new HttpParams();
+    params = params.append('isMobile', isMobile);
+    return this.get('locations/' + id, params);
   }
 
   sendContact(data: ContactRequest): Observable<void>{

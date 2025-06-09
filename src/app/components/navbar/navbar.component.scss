@@ -52,8 +52,8 @@
     }
 
     img{
-      width: 50vw;
-      height: 1.2rem;
+      width: 40vw;
+      height: 0.8rem;
 
       @include respond-to(sm){
         width: 16rem;
@@ -70,8 +70,8 @@
       }
 
       @include respond-to(xl){
-        width: 25rem;
-        height: 2rem;
+        width: initial;
+        height: initial;
       }
     }
   }
@@ -79,12 +79,12 @@
   .nav-links {
     list-style: none;
     display: flex;           // móvil: links en fila adaptable
-    flex-direction: column;  // uno debajo de otro
+    flex-direction: row;  // uno debajo de otro
     gap: 0.75rem;            // espacio reducido
 
     // sm/tablet: pasamos a fila horizontal
     @include respond-to(sm) {
-      flex-direction: row;
+      
       gap: 1.5rem;
     }
     // lg en adelante: iguales tus gaps de desktop
@@ -125,7 +125,7 @@
       }
 
       @include respond-to(xl){
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
   }

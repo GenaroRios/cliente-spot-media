@@ -14,13 +14,13 @@ html,body {
 }
 
 .fondo{
-  // base (móvil): 
-  // - no fijamos dimensiones para que se adapte al alto de contenido
-  // - background-size automático, para no recortar en pantallas muy pequeñas
   background-image: url("https://res.cloudinary.com/diixwwqeu/image/upload/v1745324234/fondo_home_tn9wt9.avif");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 60% 100%;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
+  //object-fit:cover;
 
   // sm (≥576px): ajustamos un poco la cobertura
   @include respond-to(sm) {

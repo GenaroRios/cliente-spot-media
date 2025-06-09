@@ -1,9 +1,16 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 .overlay{
     position: relative;
     height: 100%;
     background-color:  rgba(0, 0, 0, 0.8); /* o el color/fondo que quieras */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+
+    @include respond-to(tablet){
+        justify-content: space-between;
+    }
 }
 

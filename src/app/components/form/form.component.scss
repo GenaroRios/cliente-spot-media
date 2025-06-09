@@ -1,3 +1,6 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 .form-container {
     display: flex;
     justify-content: center;
@@ -5,31 +8,67 @@
     font-family: 'Akzidenz-Grotesk BQ';
     width: 100%;
     height: 100%;
-    margin-top: 10rem;
+    margin-top: 3rem;
+
+    @include respond-to(lg){
+      margin-top: 5rem;
+    }
+
+    @include respond-to(xl){
+      margin-top: 10rem;
+    }
   }
   
   .form-card {
     position: relative;
     background: white;
-    padding: 1.5rem 3rem 3rem;
+    padding: 1rem 2rem 2rem;
     width: 100%;
-    max-width: 20rem;
+    max-width: 18rem;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+    @include respond-to(lg){
+      padding: 1rem 3rem 2.5rem;
+      max-width: 15rem;
+    }
+
+    @include respond-to(xl){
+      padding: 1.5rem 3rem 3rem;
+      max-width: 20rem;
+    }
   }
   
   .form-title {
     font-family: 'Akzidenz-Grotesk BQ-Bold';
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
     color: #00a2ff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+
+    @include respond-to(lg){
+      font-size: 1.6rem;
+      margin-bottom: 1.3rem;
+    }
+
+    @include respond-to(xl){
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
   }
   
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
+
+    @include respond-to(lg){
+      gap: 1rem;
+    }
+
+    @include respond-to(xl){
+      gap: 1.2rem;
+    }
   }
   
   input {
@@ -39,8 +78,18 @@
     padding: 0.5rem 0;
     outline: none;
     font-family: 'Akzidenz-Grotesk BQ';
-    font-size: 1rem;
+    font-size: 0.8rem;
     transition: border-color 0.3s;
+
+    @include respond-to(lg){
+      font-size: .9rem;
+      padding: 0.3rem 0;
+    }
+
+    @include respond-to (xl){
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
   }
   
   input:focus {
@@ -56,11 +105,27 @@
     line-height: 1.5rem;
     border: none;
     border-bottom: 2px solid #90f7ec;
-    padding: 8px 0;
+    padding: 0.5rem 0;
     outline: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: inherit;
     transition: border-color 0.3s;
+
+    @include respond-to(lg){
+      height: 1.3rem;
+      max-height: 3.9rem;
+      line-height: 1.5rem;
+      padding: .5rem 0;
+      font-size: .9rem;
+    }
+
+    @include respond-to(xl){
+      height: 1.5rem;
+      max-height: 4.5rem; /* hasta 3 líneas */
+      line-height: 1.5rem;
+      padding: .5rem 0;
+      font-size: 1rem;
+    }
   }
   
   textarea.auto-expand:focus {
@@ -69,7 +134,7 @@
   
   
   .submit-button {
-    width: 15rem;
+    width: 13rem;
     padding: 1rem 1rem;
     background: linear-gradient(to right, #00c9ff, #92fe9d);
     border: none;
@@ -78,6 +143,11 @@
     letter-spacing: 1px;
     cursor: pointer;
     transition: background 0.3s;
+
+    @include respond-to(tablet){
+      width: 15rem;
+      padding: 1rem 1rem;
+    }
   }
   
   .submit-button:hover {

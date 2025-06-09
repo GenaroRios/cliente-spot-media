@@ -5,15 +5,16 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color:  rgba(0, 0, 0, 0.8); /* o el color/fondo que quieras */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    text-align: justify;
+    text-align: left;
 
     @include respond-to (tablet){
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
       justify-content: flex-start;
+      align-items: center;
       text-align: left;
     }
 }
@@ -23,7 +24,8 @@
     width: 90vw;
     line-height: 1.6;
     font-family: 'Akzidenz-Grotesk BQ';
-    font-size: 1.1rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
 
     @include respond-to(sm){
       margin-left: 4rem;
@@ -33,6 +35,7 @@
     }
 
     @include respond-to(tablet){
+      margin-bottom: 0;
       margin-left: 4rem;
       line-height: 1.4;
       font-size: 1.1rem;

@@ -1,13 +1,26 @@
+@use '../../../variables.scss' as *;
+@use '../../../mixins.scss' as *;
+
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding: 1.5rem 5rem;
+    align-items: center;
+    padding: 1.5rem;
     background: transparent;
     color: white;
     font-family: 'Akzidenz-Grotesk BQ';
     font-size: 0.9rem;
-    //width: 100vw;
+    text-align: center;
+    justify-content: center;
+    //width: 100%;
+
+    @include respond-to(tablet){
+        text-align: left;
+        justify-content: space-between;
+        align-items: end;
+        padding: 1.5rem 5rem;
+
+    }
+
 }
 
 .footer-left {
@@ -20,11 +33,14 @@
 }
 
 .footer-right {
+    display: none;
 
     //padding-right: 5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    @include respond-to(tablet){
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
 }
 
 .social-icons{
