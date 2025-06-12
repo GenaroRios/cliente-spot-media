@@ -1,18 +1,30 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Inject, Input, OnInit, PLATFORM_ID, Renderer2, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatIconModule }    from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
 
 @Component({
   selector: 'app-navbar',
   imports: [
 
-    RouterModule
+    RouterModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule
+
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  menuOpen = false;
 
   constructor(
     private el: ElementRef<HTMLElement>,
@@ -40,6 +52,10 @@ export class NavbarComponent {
         nav.classList.remove('fade-out');
       }, 2500);
     }
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 
 }

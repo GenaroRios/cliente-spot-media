@@ -3,9 +3,19 @@
         <img src="https://res.cloudinary.com/diixwwqeu/image/upload/v1745322410/logo_nav_f44eox.png"
         alt="Logo Spot Media">
     </a>
-    <ul class="nav-links">
-        <li><a routerLink="/nosotros">NOSOTROS</a></li>
-        <li><a routerLink="/servicios">SOPORTES</a></li>
-        <li><a routerLink="/contacto">CONTACTO</a></li>
+
+    <button
+            class="nav-toggle"
+            mat-icon-button
+            (click)="toggleMenu()"
+            aria-label="Toggle navigation"
+        >
+            <mat-icon>menu</mat-icon>
+    </button>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+        <li><a routerLink="/nosotros" (click)="toggleMenu()">NOSOTROS</a></li>
+        <li><a routerLink="/servicios" (click)="toggleMenu()">SOPORTES</a></li>
+        <li><a routerLink="/contacto" (click)="toggleMenu()">CONTACTO</a></li>
     </ul>
 </nav>
