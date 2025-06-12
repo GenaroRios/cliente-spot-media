@@ -12,8 +12,8 @@ import { ContactRequest } from '../models/contactRequest.model';
 })
 export class ApiServiceService {
 
-  //private readonly API_URL = 'https://spotmediainc.com';
-  private readonly API_URL = 'http://localhost:3000';
+  private readonly API_URL = 'https://spotmediainc.com';
+  //private readonly API_URL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
