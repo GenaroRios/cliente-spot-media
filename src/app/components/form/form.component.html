@@ -9,8 +9,9 @@
         <textarea formControlName="mensaje" class="auto-expand" placeholder="Mensaje"></textarea>
         <button type="submit" class="submit-button">ENVIAR</button>
       </form>
-      <p *ngIf="success">¡Mensaje enviado!</p>
-      <p *ngIf="error">{{errorMessage}}</p>
+      <p *ngIf="loading">Procesando consulta...</p>
+      <p *ngIf="!loading && success">¡Mensaje enviado!</p>
+      <p *ngIf="!loading && error">{{errorMessage}}</p>
     </div>
 </div>
   

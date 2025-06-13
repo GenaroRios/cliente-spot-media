@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 export class FormComponent {
 
   contactRequest!: FormGroup;
+  loading = false;
   success = false;
   error = false;
   errorMessage: string = "Ocurrió un error, intenta de nuevo."
@@ -51,10 +52,18 @@ export class FormComponent {
       this.errorMessage = "Formulario incompleto."
       return;
     }
+
+    this.loading = true;
     this.api.sendContact(this.contactRequest.value)
       .subscribe({
-        next: () => { this.success = true;},
-        error: () => {this.error = true;}
+        next: () => {
+          this.loading = false;
+          this.success = true;
+        },
+        error: () => {
+          this.loading = false;
+          this.error = true;
+        }
       });
   }
 

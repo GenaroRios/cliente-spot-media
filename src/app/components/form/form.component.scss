@@ -156,5 +156,14 @@
 
   p{
     text-align: center;
+    font-size: 0.8rem;
+
+    @include respond-to(lg){
+      font-size: .9rem;
+    }
+
+    @include respond-to (xl){
+      font-size: 1rem;
+    }
   }
   
