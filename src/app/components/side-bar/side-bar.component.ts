@@ -19,6 +19,8 @@ import { CommonModule } from '@angular/common';
 })
 export class SideBarComponent {
 
+  menuOpen = false;
+
   locations: simpleLocation[] = [];
 
   constructor(private api: ApiServiceService, private router: Router){}
@@ -45,5 +47,9 @@ export class SideBarComponent {
 
     return `${primeraPalabra}<br>${resto}`;
 
+  }
+
+  toggleMenu(){
+    this.menuOpen = !this.menuOpen;
   }
 }

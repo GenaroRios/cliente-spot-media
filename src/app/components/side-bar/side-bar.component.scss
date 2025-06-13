@@ -5,8 +5,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
+    
+    left: -100px; 
 
+    &.open {
+      left: 0;                       
+    }
     
 
     display: flex;
@@ -14,9 +18,36 @@
     gap: 0.25rem;
     background-color: transparent;
     z-index: 10;
+
+    @include respond-to(tablet){
+      left: 0;
+    }
+  }
+
+  .handle {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 0; 
+    right: -40px;                  // sobresale 40px del lado izquierdo
+    width: 40px; 
+    height: 40px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    font-size: 1.5rem;
   }
   
   .nav-item {
+    pointer-events: none;
+
+    &.open {
+      pointer-events: all;                     
+    }
     font-family: 'Akzidenz-Grotesk BQ-Bold';
     font-size: .8rem;
     color: #00aaff;
@@ -32,6 +63,7 @@
     height: 4rem;
 
     @include respond-to(tablet){
+      pointer-events: all;
       font-size: 0.8rem;
       padding-left: 2rem;
       width: 9rem;
